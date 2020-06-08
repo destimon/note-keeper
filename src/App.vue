@@ -2,7 +2,6 @@
   <div id="app">
     <ul class="nav">
       <li><router-link class="nav-li" to="/">Home</router-link></li>
-      <li><router-link class="nav-li" to="/edit">Edit</router-link></li>
       <li><router-link class="nav-li" to="/about">About</router-link></li>
     </ul>
     <router-view/>

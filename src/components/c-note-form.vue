@@ -9,23 +9,36 @@
       <button class="nk-button">Add Todo</button>
 
       <div class="nk-container">
-        <label class="nk-checkbox-container">One
-          <input type="checkbox" checked="checked">
-          <span class="nk-checkmark"></span>
-        </label>
+        <template v-for="(todo, i) in todos">
+          <label :key="i" class="nk-checkbox-container">{{ todo.label }}
+            <input type="checkbox" :checked="(todo.isDone) ? 'checked' : ''">
+            <span class="nk-checkmark"></span>
+          </label>
+        </template>
       </div>
     </div>
 
-    <input id="nk-button-form" class="nk-button" type="button" value="Submit">
+    <input @click="submitNote()" id="nk-button-form" class="nk-button" type="button" value="Submit">
   </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
-      title: 'asds',
+      title: '',
       todos: []
+    }
+  },
+  methods: {
+    submitNote() {
+      const note = {
+        title: this.title,
+        todos: this.todos
+      }
+
+      this.$store.dispatch('addNote', note)
     }
   },
   mounted() {

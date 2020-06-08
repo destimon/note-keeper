@@ -3,13 +3,19 @@
     <div class="nk-subheader">
       Options
     </div>
-    <button class="nk-button">Create new</button>
+    <button @click="createNew()" class="nk-button">Create new</button>
   </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    createNew() {
+      this.$router.push({ path: 'edit', query: {
+        action: 'create', 
+      }})
+    }
+  }
 }
 </script>
 
