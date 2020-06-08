@@ -2,7 +2,7 @@
   <div class="nk-container">
     <div class="nk-subheader">List</div>
     <template v-for="(note, i) in notes">
-      <div :key="i">
+      <div class="nk-note-block" :key="i">
         <p>{{ note.title }}</p>
       </div>
     </template>
