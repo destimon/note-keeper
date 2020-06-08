@@ -25,6 +25,11 @@
 <script>
 
 export default {
+  props: {
+    titleEdit: {
+      type: String
+    }
+  },
   data() {
     return {
       title: '',
@@ -42,7 +47,7 @@ export default {
     }
   },
   mounted() {
-    
+    console.log(this.titleEdit);
   }
 }
 </script>

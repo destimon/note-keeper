@@ -8,7 +8,7 @@
         <div class="nk-header">Create note</div>
       </div>
       <hr/>
-      <NoteForm />
+      <NoteForm :titleEdit="this.$route.query.title"/>
     </div>
   </div>
 </template>
