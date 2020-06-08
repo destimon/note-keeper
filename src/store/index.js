@@ -17,6 +17,9 @@ export default new Vuex.Store({
   mutations: {
     addNote(state, notes) {
       state.notes = notes;
+    },
+    deleteAllNotes(state) {
+      state.notes = [];
     }
   },
   actions: {
@@ -32,6 +35,11 @@ export default new Vuex.Store({
 
       localStorage.setItem('notes', JSON.stringify(result));
       commit('addNote', result)
+    },
+    deleteAllNotes({commit}) {
+      if (localStorage.notes)
+        localStorage.removeItem('notes');
+      commit('deleteAllNotes');
     }
   },
   modules: {
